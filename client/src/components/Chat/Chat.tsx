@@ -1,11 +1,41 @@
 import React, { useState, useEffect } from 'react';
-import queryString from 'query-string';
+import { ChatHeader, ChatInput } from '.';
+import { Messages } from '../Messages';
+import { IMessage } from '../Message';
 import io from 'socket.io-client';
-import ChatHeader from './ChatHeader';
-import Input from './Input';
-import Messages from '../Messages/Messages';
-import { IMessage } from '../../models/message';
-import { ChatContainer, Container } from './elements';
+import queryString from 'query-string';
+import styled from 'styled-components';
+
+export const ChatContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1a1a1d;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    height: 100%;
+  }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 8px;
+  height: 60%;
+  width: 35%;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (min-width: 480px) and (max-width: 1200px) {
+    width: 60%;
+  }
+`;
 
 const END_POINT = `localhost:5000`;
 
@@ -63,7 +93,7 @@ const Chat: React.FC<IProps> = ({ location }) => {
       <Container>
         <ChatHeader room={room} />
         <Messages messages={messages} name={name} />
-        <Input
+        <ChatInput
           message={message}
           setMessage={setMessage}
           sendMessage={sendMessage}

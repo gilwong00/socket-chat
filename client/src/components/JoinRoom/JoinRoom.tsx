@@ -1,13 +1,56 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  JoinContainer,
-  JoinRoomWrapper,
-  Header,
-  NameInput,
-  RoomInput,
-  Button,
-} from './elements';
+import styled from 'styled-components';
+
+export const JoinContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-color: #1a1a1d;
+`;
+
+export const JoinRoomWrapper = styled.div`
+  width: 20%;
+`;
+
+export const Button = styled.button`
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #2979ff;
+  padding: 20px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+
+  :focus {
+    outline: 0;
+  }
+`;
+
+export const Header = styled.h1`
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+`;
+
+export const NameInput = styled.input`
+  border-radius: 0;
+  padding: 15px 20px;
+  width: 100%;
+`;
+
+export const RoomInput = styled.input`
+  border-radius: 0;
+  padding: 15px 20px;
+  width: 100%;
+  margin-top: 20px;
+`;
 
 const JoinRoom = () => {
   const [name, setName] = useState<string>('');

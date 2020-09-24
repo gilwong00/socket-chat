@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Chat from './components/Chat/Chat';
-import JoinRoom from './components/JoinRoom/JoinRoom';
+import { Chat } from './components/Chat';
+import { JoinRoom } from './components/JoinRoom';
 import './App.css';
 
 const App = () => (
