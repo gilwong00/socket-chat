@@ -46,7 +46,7 @@ const ChatInput: React.FC<IProps> = ({ message, setMessage, sendMessage }) => (
       onChange={(e: React.FormEvent<HTMLInputElement>) =>
         setMessage(e.currentTarget.value)
       }
-      onKeyPress={e => (e.key === 'Enter' ? sendMessage(e) : null)}
+      onKeyDown={e => (e.key === 'Enter' ? sendMessage(e) : null)}
     />
     <SendButton onClick={e => sendMessage(e)}>Send</SendButton>
   </InputForm>
